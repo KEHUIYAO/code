@@ -1,0 +1,1 @@
+coal_data.xlsx is the file which contains the raw data used in the real data analysis part in the paper.
