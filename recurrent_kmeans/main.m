@@ -18,7 +18,7 @@ case 3
 end
 k=1;
 m=length(Nj);
-upper_limit=5
+upper_limit=5;
 while k<=upper_limit
     [group1, centroids1,~]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
     %% this line use bootstrap vs parametric

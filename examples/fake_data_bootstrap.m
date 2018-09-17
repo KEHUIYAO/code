@@ -1,0 +1,16 @@
+addpath("../recurrent_kmeans/")
+load("coal_data.mat")
+
+parpool(18)
+num_list=zeros(1,200);
+centroids_list=cell(1,200);
+parfor i=1:200
+rng('shuffle')%set up the random seed
+u_v=centroids(:,1);% two possible values of change-points
+K_d=4;% two clusters
+m=40; % # of drivers
+lambda_k=centroids(:,2:3);
+[z,Nj,C,~]=latent_simu_f_different_intensity_rate(u_v,m,lambda_k,K_d);%___________data simulation end_______________
+[num_list(i),~,centroids_list{i}]=main(z,Nj,C,1,0,100);
+end
+save fake_data_bootstrap.mat num_list centroids_list 

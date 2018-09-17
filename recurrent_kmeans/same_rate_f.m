@@ -28,6 +28,7 @@ Cj=C(driver_id_list);
 
 tau_l=0;
 tau_u=max(tau_upper,min(Cj));
+%tau_u=tau_upper;
 
 if tau_lower~=0
     tau_l=tau_lower;
