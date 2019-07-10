@@ -16,5 +16,6 @@ l2=0.1; % intensity rate after the change-point
 % You can also make plots, I will show you next time
 [num_list(i),group_list(i,:),centroids_list{i}]=main(z,Nj,C,1.96,100,350);
 end
+
 save 1.mat tau_list num_list group_list centroids_list 
 
