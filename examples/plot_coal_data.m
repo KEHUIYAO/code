@@ -4,6 +4,43 @@ num_of_plots=num_of_plots(1)
 m = length(C);
 q=0:1:226;
 F1 = @(B,x) (B(1)*(x<=B(2)).*x+(x>B(2)).*(B(1)*B(2)+B(3)*(x-B(2)))); %without intercept  %Form of the equation,two piece linear 
+%% no cluster
+figure('Renderer', 'painters', 'Position', [10 10 600 600])
+hold all 
+for n=1:m
+    if group(n)==1
+    a=plot([0,z(n,1:Nj(n))],0:Nj(n),'-ko','MarkerSize',3)
+    elseif group(n)==2
+        b=plot([0,z(n,1:Nj(n))],0:Nj(n),'-ko','MarkerSize',3)  
+    elseif group(n)==3 
+         c=plot([0,z(n,1:Nj(n))],0:Nj(n),'-ko','MarkerSize',3)
+    elseif group(n)==4   
+         d=plot([0,z(n,1:Nj(n))],0:Nj(n),'-ko','MarkerSize',3)
+    end
+end
+%legend([a b c d],{'1','2','3','4'},'Location','northwest')
+xlabel("Year")
+ylabel("N(t)")
+yticks([0 20 40])
+yticklabels({"0","20","40"})
+% xticks([47.8  134.7  221.6])
+% xticklabels({"1860","1880","1900"})
+xticks([47.8  134.7  226])
+xlim([0 226])
+xticklabels({"1860","1880","1901"})
+
+
+
+
+
+
+
+
+
+
+
+
+
 %% plot the whole picture
 % ax = tight_subplot(1,4,0.11,0.1); 
 % subplot(ax(1));
@@ -27,8 +64,8 @@ yticks([0 20 40])
 yticklabels({"0","20","40"})
 % xticks([47.8  134.7  221.6])
 % xticklabels({"1860","1880","1900"})
-xticks([47.8  134.7  225.8])
-xlim([0 225.8])
+xticks([47.8  134.7  226])
+xlim([0 226])
 xticklabels({"1860","1880","1901"})
 %%
 % subplot(ax(2));
