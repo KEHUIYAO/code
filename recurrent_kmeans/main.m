@@ -25,9 +25,8 @@ m=length(Nj);
 upper_limit=5;
 while k<=upper_limit
     
-	[group1, centroids1,prob]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
-    
     %%% this section use parametric bootstrap method
+    [group1, centroids1,prob]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
 	%% this line use bootstrap vs parametric
     %[~,bdfts]=bootstrap_test_stat(z,Nj,C,200,k,tau_lower,tau_upper);
     
@@ -41,58 +40,67 @@ while k<=upper_limit
         centroids=centroids1;
         break
     end
-			
-	%%% this section use AIC criteria
-%     if k==1
-%         minAIC = AIC(3,sum(prob));
-%         k=2;
-%     else
-%         AICValue=AIC(3*k,sum(prob));
-%         if AICValue < minAIC
-%             minAIC = AICValue;
-%             k = k+1;
-%             group = group1;
-%             centroids = centroids1;
-%         else
-%             num = k-1;
-%             break
-%         end
-%     end
-%   
     
-    
-    
-    
-    
-    
-
-	%%% this section use BIC criteria
-%     if k==1
-% 		minBIC=BIC(3, m, sum(prob));
-% 		k=2;
-% 	else
-% 		BICValue=BIC(3*k, m, sum(prob));
-%         if BICValue < minBIC
-% 			minBIC = BICValue;
-% 		    k = k+1;
-% 			group=group1;
-% 			centroids=centroids1;
-% 		else
-% 			num=k-1;
-% 			break	
-%         end
-%     end
-    
-    
-	% if k exceeds the upper limit, the number of cluster is considered as the upper limit
+    % if k exceeds the upper limit, the number of cluster is considered as the upper limit
     if k == upper_limit + 1
         num=k-1;
         group=group1;
         centroids = centroids1;
     end
-	
-end
+    
+    %%% this section use AIC criteria
+%     [group, centroids,prob]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
+%     if k==1
+%         tempAIC = AIC(3,sum(prob));
+%         tempGroup = group;
+%         tempCentroids = centroids;
+%     else
+%         AICValue=AIC(3*k,sum(prob));
+%         if AICValue < tempAIC
+%             tempAIC = AICValue;
+%             tempGroup = group;
+%             tempCentroids = centroids;
+%         else
+%             num = k-1;
+%             group = tempGroup;
+%             centroids = tempCentroids;
+%             break
+%         end
+%     end
+    
 
+	%%% this section use BIC criteria
+%     [group, centroids,prob]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
+%     if k==1
+% 		tempBIC=BIC(3,m, sum(prob));
+%         tempGroup = group;
+%         tempCentroids = centroids;
+%         
+% 	else
+% 		BICValue=BIC(3*k,m,sum(prob));
+%         if BICValue < tempBIC
+% 			tempBIC = BICValue;
+% 			tempGroup=group;
+% 			tempCentroids=centroids;
+% 		else
+% 			num=k-1;
+%             group = tempGroup;
+%             centroids = tempCentroids;
+% 			break	
+%         end
+%    end
+%     
+%     
+% 	% if k exceeds the upper limit, the number of cluster is considered as the upper limit
+%     if k == upper_limit
+%         num = k;
+%         break
+%     end
+% 	
+%     k = k + 1;
+% 	
+% 				
+end
 		
 %%% the following lines are used in the real data analysis
 % [CI_lower,CI_upper,std_centroids]=bootstrap_r(z,Nj,C,200,num,tau_lower,tau_upper);
