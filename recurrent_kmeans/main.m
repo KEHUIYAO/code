@@ -32,33 +32,33 @@ while k<=upper_limit
     %[~,bdfts]=bootstrap_test_stat(z,Nj,C,200,k,tau_lower,tau_upper);
     
 	%% this line use only parametric
-    %[test_stat,~]=bootstrap_test_stat(z,Nj,C,200,k,tau_lower,tau_upper);
-    %if ref_new(test_stat,centroids1,k,m,200,adj,tau_lower,tau_upper)
-        %k=k+1;
-    %else
-        %num=k;
-        %group=group1;
-        %centroids=centroids1;
-        %break
-    %end
+    [test_stat,~]=bootstrap_test_stat(z,Nj,C,200,k,tau_lower,tau_upper);
+    if ref_new(test_stat,centroids1,k,m,200,adj,tau_lower,tau_upper)
+        k=k+1;
+    else
+        num=k;
+        group=group1;
+        centroids=centroids1;
+        break
+    end
 			
 	%%% this section use AIC criteria
-    if k==1
-        minAIC = AIC(1,sum(prob));
-        k=2;
-    else
-        AICValue=AIC(k,sum(prob));
-        if AICValue < minAIC
-            minAIC = AICValue;
-            k = k+1;
-            group = group1;
-            centroids = centroids1;
-        else
-            num = k-1;
-            break
-        end
-    end
-  
+%     if k==1
+%         minAIC = AIC(3,sum(prob));
+%         k=2;
+%     else
+%         AICValue=AIC(3*k,sum(prob));
+%         if AICValue < minAIC
+%             minAIC = AICValue;
+%             k = k+1;
+%             group = group1;
+%             centroids = centroids1;
+%         else
+%             num = k-1;
+%             break
+%         end
+%     end
+%   
     
     
     
@@ -68,10 +68,10 @@ while k<=upper_limit
 
 	%%% this section use BIC criteria
 %     if k==1
-% 		minBIC=BIC(1, sum(prob));
+% 		minBIC=BIC(3, m, sum(prob));
 % 		k=2;
 % 	else
-% 		BICValue=BIC(k,sum(prob));
+% 		BICValue=BIC(3*k, m, sum(prob));
 %         if BICValue < minBIC
 % 			minBIC = BICValue;
 % 		    k = k+1;
@@ -81,6 +81,7 @@ while k<=upper_limit
 % 			num=k-1;
 % 			break	
 %         end
+%     end
     
     
 	% if k exceeds the upper limit, the number of cluster is considered as the upper limit
