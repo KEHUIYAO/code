@@ -1,6 +1,6 @@
+% find the nearest centroid the object belongs to based on the cozy-distance.
 function [which_centroids,prob]=nearest_centroids(centroids,z,Nj,C,k,driver_id)
     likelihood=zeros(1,k);
- 
     event_list=z(driver_id,:);
     cj=C(driver_id);
     nj=Nj(driver_id);
@@ -13,8 +13,6 @@ function [which_centroids,prob]=nearest_centroids(centroids,z,Nj,C,k,driver_id)
     end
     
     [prob,which_centroids]=max(likelihood);
-    
-    
 end
 
 

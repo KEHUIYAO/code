@@ -1,10 +1,9 @@
+% centroid initialization function
 function C = kmeans_plus(X,k)
-
 L = [];
 L1 = 0;
 
 while length(unique(L)) ~= k
-    
     % The k-means++ initialization.
     C = X(:,1+round(rand*(size(X,2)-1)));
     L = ones(1,size(X,2));
@@ -16,5 +15,4 @@ while length(unique(L)) ~= k
         [~,L] = max(bsxfun(@minus,2*real(C'*X),dot(C,C,1).'));
     end
 end
-
 end

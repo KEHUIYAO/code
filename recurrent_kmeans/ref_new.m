@@ -1,4 +1,4 @@
-%% the first version of ref_new is bootstrap vs parametric 
+% the first version of ref_new is bootstrap vs parametric 
 
 function [success]=ref_new(bdfts,centroids,k,num,B,adj,tau_lower,tau_upper)
 if length(bdfts)>1

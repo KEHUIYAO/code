@@ -1,13 +1,14 @@
-unction [low_b,high_b,std_dev]=bootstrap_r(z,Nj,C,B,k,tau_lower,tau_upper)
+% bootstrap interval estimates of the centroids.
+function [low_b,high_b,std_dev]=bootstrap_r(z,Nj,C,B,k,tau_lower,tau_upper)
+
 if nargin<5
   k = 2;
 end
 m=length(Nj);
 index=1:m;
-
 centroids_list=cell(1,B);
-for i=1:B
 
+for i=1:B
 ind=datasample(index,m);
 dat=z(ind,:);
 nj=Nj(ind);

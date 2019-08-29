@@ -1,3 +1,4 @@
+% find the centroid when the number of groups is given.
 function [group,centroids,prob] = kmeans_r(z,Nj,C,k,tau_lower,tau_upper)
 %%% input
 % z is a matrix, each row represents a object, which contains multiple events
@@ -11,8 +12,6 @@ function [group,centroids,prob] = kmeans_r(z,Nj,C,k,tau_lower,tau_upper)
 % group is a vector, each element represents the group id for the corresponding object
 % centroids is a matrix, each row records a vector which contains the information about a cluster including the change-point, intensity rate before change-point and after change-point  
 % prob is a vector, each element is the distance from the corresponding object to its nearest cluster
-
-
 
 % sample sizes
 m=length(Nj); 

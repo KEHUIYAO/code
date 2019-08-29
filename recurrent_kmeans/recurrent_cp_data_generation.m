@@ -1,3 +1,4 @@
+% sample dataset generation program
 clear
 clc
 rng('shuffle')%set up the random seed

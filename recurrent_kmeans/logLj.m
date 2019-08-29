@@ -1,3 +1,4 @@
+% the loglikelihood
 function logr= logLj(lam1,lam2,tauj,cj,Nj_r,t,adj)
 % Compute the loglikelihood of one individual
 % tauj is a vector, cj is a number, t is a vector of event times

@@ -1,3 +1,4 @@
+% not used in main workflow
 function[power,u,uu]=ref_power(z,Nj,C,k,tau_lower,tau_upper)
 
 [u,uu]=ref_distribution(z,Nj,C,k,tau_lower,tau_upper);

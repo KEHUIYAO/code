@@ -1,3 +1,4 @@
+% calculate test statistics
 function [test_stat,u]=bootstrap_test_stat(z,Nj,C,B,k,tau_lower,tau_upper)
 [~,~, prob1]=kmeans_r(z,Nj,C,k,tau_lower,tau_upper);
 [~,~,prob2]=kmeans_r(z,Nj,C,k+1,tau_lower,tau_upper);
@@ -6,7 +7,8 @@ m=length(Nj);
 index=1:m;
 u=zeros(1,B);
 
-%% if the following sentences were used, then it will be bootstrap vs parametric method.
+
+% if the following sentences were used, then it will be bootstrap vs parametric method.
 
 % for i=1:B
 % 

@@ -1,4 +1,5 @@
-function [z,Nj,C,tau_index]=latent_simu_f_ref(u_v,m,lambda_k,K)% simulate date with K unique values of change-points
+% simulate date with K unique values of change-points
+function [z,Nj,C,tau_index]=latent_simu_f_ref(u_v,m,lambda_k,K)
 C=unifrnd(450,500,m,1);% censoring time
 tau_index=unidrnd(K,m,1);%the true membership 
 tau=u_v(1)*ones(m,1);% the true tau

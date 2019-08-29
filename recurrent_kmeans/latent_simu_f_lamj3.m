@@ -1,4 +1,5 @@
-function [z,Nj,C,tau_index]=latent_simu_f_lamj3(u_v,m,l1,l2,K)% simulate date with K unique values of change-points
+% simulate date with K unique values of change-points
+function [z,Nj,C,tau_index]=latent_simu_f_lamj3(u_v,m,l1,l2,K)
 %a1, a2 is the prior for lam1, lam2, b1=b2=1
 c_lam = 100;% the scale parameter of the gamrnd 
 %lam1=gamrnd(c_lam*a1,1/c_lam,m,1);%mean is a1*0.001, var is a1*0.001^2

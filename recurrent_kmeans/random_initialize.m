@@ -1,3 +1,4 @@
+% centroids initialization function
 function centroids=random_initialize(z,Nj,C,k,tau_lower,tau_upper)
     
 %% kmeans++

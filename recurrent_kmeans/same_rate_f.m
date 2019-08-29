@@ -1,3 +1,4 @@
+% estimate the parameters using MLE.
 function [tau,lam1, lam2,logL]=same_rate_f(z,Nj,C,driver_id_list,tau_lower,tau_upper)
 % tau_l, tau_u are the lower bound and upper bound of tau
 % q is the vector of the ordered event_times

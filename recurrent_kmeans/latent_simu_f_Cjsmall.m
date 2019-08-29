@@ -1,4 +1,5 @@
-function [z,Nj,C,tau_index]=latent_simu_f_Cjsmall(u_v,m,lambda_k,K)% simulate date with K unique values of change-points
+% simulate date with K unique values of change-points, with the smaller censoring time.
+function [z,Nj,C,tau_index]=latent_simu_f_Cjsmall(u_v,m,lambda_k,K)
 % censoring time
 C=zeros(m,1);% we assume the change-point is smaller than the censoring time
 tau_index=unidrnd(K,m,1);% balanced, which cluster each driver is from

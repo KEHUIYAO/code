@@ -1,3 +1,4 @@
+% assistance function for plot the result.
 function [ha, pos] = tight_subplot(Nh, Nw, gap, marg_h, marg_w)
 
 % tight_subplot creates "subplot" axes with adjustable gaps and margins

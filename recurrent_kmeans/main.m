@@ -1,3 +1,4 @@
+% main function of the recurrent k means algorithm, including automatically detect the number of groups.
 function [num,group,centroids]=main(z,Nj,C,adj,tau_lower,tau_upper)
 %% the following commented function are used when faced real data analysis
 %function [num,group,centroids,CI_lower,CI_upper,std_centroids,based_on_centroids]=main(z,Nj,C,adj,tau_lower,tau_upper)
@@ -102,7 +103,7 @@ while k<=upper_limit
 % 				
 end
 		
-%%% the following lines are used in the real data analysis
+%%% the following section are used in the real data analysis
 % [CI_lower,CI_upper,std_centroids]=bootstrap_r(z,Nj,C,200,num,tau_lower,tau_upper);
 % 
 % 

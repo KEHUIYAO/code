@@ -1,4 +1,5 @@
-function [z,Nj,C,tau_index]=latent_simu_f(u_v,m,l1,l2,K)% simulate date with K unique values of change-points
+% simulate date with K unique values of change-points, and the group of samples are balanced
+function [z,Nj,C,tau_index]=latent_simu_f_balanced(u_v,m,l1,l2,K)
 %u_v is the change-point vector
 %l1 is the intensity before the change-point
 %l2 is the rate after the change-point

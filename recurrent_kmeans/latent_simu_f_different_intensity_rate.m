@@ -1,4 +1,5 @@
-function [z,Nj,C,tau_index]=latent_simu_f_different_intensity_rate(u_v,m,lambda_k,K)% simulate date with K unique values of change-points
+% simulate date with K unique values of change-points, with different intensity rates.
+function [z,Nj,C,tau_index]=latent_simu_f_different_intensity_rate(u_v,m,lambda_k,K)
 %% for different dataset, you should change the C_l and C_u, the censoring time
 %C_l=450;
 %C_u=500;
